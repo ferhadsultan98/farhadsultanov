@@ -2,7 +2,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Layout from "./components/Layout/Layout";
 import Home from "./Pages/Home/Home";
 import About from "./Pages/About/About";
 import Projects from "./Pages/Projects/Projects";
@@ -13,6 +12,7 @@ import Contact from "./Pages/Contact/Contact";
 import NotFound from "./Components/NotFound/NotFound";
 import BlogDetails from "./Pages/BlogDetails/BlogDetails";
 import ExperienceDetails from "./Pages/ExperienceDetails/ExperienceDetails";
+import Layout from "./Components/Layout/Layout";
 
 function App() {
   return (
