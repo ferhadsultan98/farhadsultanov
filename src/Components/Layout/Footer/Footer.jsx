@@ -1,14 +1,12 @@
 // Footer.jsx
-import React from 'react';
-import { 
-  FaGithub, 
-  FaLinkedin, 
-  FaInstagram
-} from 'react-icons/fa';
-import { 
-  HiMail, 
-  HiChevronUp 
-} from 'react-icons/hi';
+import React from "react";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaInstagram,
+} from "react-icons/fa6";   // ✅ fa → fa6
+
+import { HiMail, HiChevronUp } from "react-icons/hi"; // ✅ hi qalır
 import './Footer.scss';
 
 
