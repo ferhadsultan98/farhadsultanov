@@ -1,0 +1,337 @@
+// Footer.scss
+.footer {
+  background: #000000;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #ffffff, transparent);
+  }
+
+  .footerContainer {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    // Animated Brand Name Section
+    .footerTopBrand {
+      padding: 4rem 0;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+      h3 {
+        font-size: 16rem;
+        font-weight: 800;
+        margin: 0;
+        line-height: 1;
+        text-transform: uppercase;
+        // Animated gradient added here
+        background: linear-gradient(
+          90deg,
+          #ffffff 0%,
+          #808080 25%,
+          #ffffff 50%,
+          #808080 75%,
+          #ffffff 100%
+        );
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: textShine 4s linear infinite;
+      }
+
+      // Keyframes for animation
+      @keyframes textShine {
+        0% {
+          background-position: 0% center;
+        }
+        100% {
+          background-position: 200% center;
+        }
+      }
+
+      .footerDescription {
+        margin-top: 1rem;
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.7);
+    
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.5;
+      }
+    }
+
+    .footerContent {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1.5fr;
+      gap: 4rem;
+      padding: 4rem 0 2rem;
+
+      .footerSection {
+        &.brandSection {
+          .socialLinks {
+            display: flex;
+            gap: 1rem;
+
+            .socialLink {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 45px;
+              height: 45px;
+              background: transparent;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+              border-radius: 8px;
+              color: #ffffff;
+              text-decoration: none;
+              transition: all 0.3s ease;
+
+              .socialIcon {
+                font-size: 1.3rem;
+              }
+
+              &:hover {
+                background: rgba(255, 255, 255, 0.1);
+                border-color: #ffffff;
+                transform: translateY(-3px);
+              }
+            }
+          }
+        }
+
+        &.linksSection {
+          .sectionTitle {
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            position: relative;
+
+            &::after {
+              content: "";
+              position: absolute;
+              bottom: -8px;
+              left: 0;
+              width: 30px;
+              height: 2px;
+              background: #ffffff;
+            }
+          }
+
+          .linksList {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            .linkItem {
+              margin-bottom: 0.8rem;
+
+              .footerLink {
+                color: rgba(255, 255, 255, 0.7);
+                text-decoration: none;
+                font-size: 0.95rem;
+                transition: all 0.3s ease;
+                position: relative;
+
+                &:hover {
+                  color: #ffffff;
+                  padding-left: 0.5rem;
+                }
+              }
+            }
+          }
+        }
+
+        &.contactSection {
+          .sectionTitle {
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            position: relative;
+
+            &::after {
+              content: "";
+              position: absolute;
+              bottom: -8px;
+              left: 0;
+              width: 30px;
+              height: 2px;
+              background: #ffffff;
+            }
+          }
+
+          .contactInfo {
+            margin-bottom: 2rem;
+
+            .contactLink {
+              display: flex;
+              align-items: center;
+              color: rgba(255, 255, 255, 0.7);
+              text-decoration: none;
+              font-size: 0.95rem;
+              transition: color 0.3s ease;
+
+              .contactIcon {
+                margin-right: 0.75rem;
+                font-size: 1.2rem;
+                color: #ffffff;
+              }
+
+              &:hover {
+                color: #ffffff;
+              }
+            }
+          }
+
+          .ctaSection {
+            .ctaButton {
+              display: inline-block;
+              background: #ffffff;
+              color: #000000;
+              padding: 0.8rem 1.5rem;
+              border-radius: 8px;
+              text-decoration: none;
+              font-weight: 600;
+              font-size: 0.9rem;
+              transition: all 0.3s ease;
+
+              &:hover {
+                transform: translateY(-2px);
+                background: rgba(255, 255, 255, 0.9);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .footerBottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1.5rem 0;
+
+      .bottomContent {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .copyrightSection {
+          .copyright {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+          }
+        }
+
+        .backToTop {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          background: #ffffff;
+          border: none;
+          border-radius: 8px;
+          color: #000000;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          .backToTopIcon {
+            font-size: 1.2rem;
+          }
+
+          &:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.9);
+          }
+        }
+      }
+    }
+  }
+
+  // Responsive
+  @media (max-width: 968px) {
+    .footerContainer {
+      .footerTopBrand h3 {
+        font-size: 6rem;
+      }
+      .footerTopBrand .footerDescription {
+        font-size: 1.1rem;
+      }
+      .footerContent {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+
+        .contactSection {
+          grid-column: 1 / -1;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .footerContainer {
+      padding: 0 1rem;
+
+      .footerTopBrand {
+        padding: 3rem 0;
+        h3 {
+          font-size: 2.7rem;
+        }
+        .footerDescription {
+          font-size: 14px;
+          max-width: 90%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+      
+      .footerContent {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 3rem 0 2rem;
+        text-align: center;
+
+        .footerSection {
+          &.brandSection {
+            .socialLinks {
+              justify-content: center;
+            }
+          }
+
+          &.linksSection,
+          &.contactSection {
+            .sectionTitle::after {
+              left: 50%;
+              transform: translateX(-50%);
+            }
+          }
+
+          &.contactSection {
+            .contactInfo {
+              .contactLink {
+                justify-content: center;
+              }
+            }
+          }
+        }
+      }
+
+      .footerBottom {
+        .bottomContent {
+          flex-direction: column;
+          gap: 1rem;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

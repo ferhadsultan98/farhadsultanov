@@ -1,0 +1,135 @@
+{
+  "experiences": [
+    {
+      "id": 1,
+      "slug": "senior-frontend-developer-tech-solutions",
+      "year": "2023 - Present",
+      "role": "Senior Frontend Developer",
+      "company": "Tech Solutions Inc.",
+      "location": "Bakı, Azərbaycan",
+      "type": "Full-time",
+      "description": "React və TypeScript ilə müasir web tətbiqlər hazırlayıram. Komanda ilə birlikdə böyük miqyaslı layihələrdə işləyirəm.",
+      "responsibilities": [
+        "React və TypeScript ilə frontend development",
+        "UI/UX dizayn implementasiyası",
+        "Team lead rolunu yerinə yetirmək",
+        "Code review və mentorship",
+        "API integration və optimization"
+      ],
+      "achievements": [
+        "3 böyük layihə uğurla tamamlandı",
+        "Team performansı 40% artdı",
+        "5+ junior developer-ə mentorluq"
+      ],
+      "technologies": ["React", "TypeScript", "Next.js", "SCSS", "Git"],
+      "detailedDescription": "Senior Frontend Developer olaraq Tech Solutions Inc.-də müasir web tətbiqlərin yaradılmasında aparıcı rol oynayıram. React və TypeScript stack-i ilə işləyərək, enterprise-level layihələr üzərində çalışıram.",
+      "keyProjects": [
+        {
+          "name": "E-Commerce Platform",
+          "description": "Böyük miqyaslı e-commerce platformasının frontend hissəsini hazırladım",
+          "impact": "1M+ monthly users"
+        },
+        {
+          "name": "Admin Dashboard",
+          "description": "Complex data visualization dashboard yaratdım",
+          "impact": "Team efficiency 50% artdı"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "slug": "frontend-developer-digital-agency",
+      "year": "2021 - 2023",
+      "role": "Frontend Developer",
+      "company": "Digital Agency",
+      "location": "Bakı, Azərbaycan",
+      "type": "Full-time",
+      "description": "E-commerce və corporate saytlar yaratdım. Müştərilərlə birbaşa əlaqədə olub layihələri idarə etdim.",
+      "responsibilities": [
+        "Responsive web saytların hazırlanması",
+        "E-commerce platformaların development",
+        "Client görüşləri və requirement analysis",
+        "WordPress və custom CMS integration",
+        "Performance optimization"
+      ],
+      "achievements": [
+        "20+ müştəri layihəsi tamamlandı",
+        "Müştəri məmnuniyyəti 95%+",
+        "UI/UX dizayn bacarıqları inkişaf etdi"
+      ],
+      "technologies": ["React", "JavaScript", "WordPress", "CSS", "Figma"],
+      "detailedDescription": "Digital Agency-də Frontend Developer olaraq müxtəlif müştərilər üçün web həlləri hazırladım. E-commerce platformalardan tutmuş corporate website-lərə qədər geniş spektrdə proyektlər üzərində işlədim.",
+      "keyProjects": [
+        {
+          "name": "Fashion E-Commerce",
+          "description": "Premium fashion brand üçün online mağaza",
+          "impact": "Conversion rate 35% artdı"
+        },
+        {
+          "name": "Corporate Website",
+          "description": "Böyük korporasiya üçün multi-language website",
+          "impact": "SEO ranking ilk 3-ə daxil oldu"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "slug": "junior-frontend-developer-startup",
+      "year": "2020 - 2021",
+      "role": "Junior Frontend Developer",
+      "company": "StartUp Co.",
+      "location": "Bakı, Azərbaycan",
+      "type": "Full-time",
+      "description": "Web development sahəsində ilk professional təcrübə. Kiçik və orta miqyaslı layihələrdə iştirak etdim.",
+      "responsibilities": [
+        "HTML, CSS, JavaScript ilə web səhifələr hazırlamaq",
+        "Bug fixing və testing",
+        "Senior developer-lərdən öyrənmək",
+        "Version control (Git) istifadəsi",
+        "Responsive design principles"
+      ],
+      "achievements": [
+        "Frontend əsaslarını öyrəndim",
+        "Komanda işi bacarıqları qazandım",
+        "React framework-ünə keçid etdim"
+      ],
+      "technologies": ["HTML", "CSS", "JavaScript", "React", "Git"],
+      "detailedDescription": "StartUp Co.-da Junior Frontend Developer olaraq karyeramın əsasını qoydum. Senior developer-lərdən öyrənərək frontend development-in əsaslarını mənimsədim və React framework-ünə keçid etdim.",
+      "keyProjects": [
+        {
+          "name": "Landing Pages",
+          "description": "Müxtəlif startup-lar üçün landing page-lər",
+          "impact": "5+ uğurlu proyekt"
+        },
+        {
+          "name": "Internal Tools",
+          "description": "Şirkət daxili istifadə üçün alətlər",
+          "impact": "Team productivity artdı"
+        }
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "id": 1,
+      "title": "React Advanced Patterns",
+      "issuer": "Frontend Masters",
+      "year": "2023",
+      "credential": "FM-2023-REACT-ADV"
+    },
+    {
+      "id": 2,
+      "title": "TypeScript Deep Dive",
+      "issuer": "Udemy",
+      "year": "2022",
+      "credential": "UC-TS-2022-001"
+    },
+    {
+      "id": 3,
+      "title": "Modern JavaScript",
+      "issuer": "Codecademy",
+      "year": "2021",
+      "credential": "CC-JS-2021-456"
+    }
+  ]
+}

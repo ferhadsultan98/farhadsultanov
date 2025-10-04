@@ -1,0 +1,397 @@
+// pages/ProjectDetails.scss
+.projectDetailsPage {
+  width: 100%;
+  min-height: 100vh;
+  background: #000000;
+  color: #ffffff;
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  // Name Header with Animation
+  .nameHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 2rem 3rem;
+    border-bottom: 1px solid #1a1a1a;
+
+    .animatedName {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin: 0;
+      text-align: center;
+      background: linear-gradient(
+        90deg,
+        #ffffff 0%,
+        #808080 25%,
+        #ffffff 50%,
+        #808080 75%,
+        #ffffff 100%
+      );
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textShine 4s linear infinite;
+    }
+  }
+
+  @keyframes textShine {
+    0% {
+      background-position: 0% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+
+  // Hero Section
+  .projectHero {
+    padding: 4rem 2rem;
+    border-bottom: 1px solid #1a1a1a;
+
+    .backButton {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      border: 1px solid #1a1a1a;
+      color: #ffffff;
+      padding: 0.75rem 1.25rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-bottom: 3rem;
+
+      &:hover {
+        border-color: #333333;
+        transform: translateX(-3px);
+      }
+    }
+
+    .heroContent {
+      max-width: 900px;
+
+      .heroMeta {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+
+        .metaTag {
+          padding: 0.5rem 1rem;
+          border: 1px solid #1a1a1a;
+          border-radius: 8px;
+          font-size: 0.875rem;
+          color: #808080;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          font-weight: 500;
+        }
+      }
+
+      .heroDescription {
+        font-size: 1.5rem;
+        line-height: 1.6;
+        color: #ffffff;
+        margin: 0 0 2.5rem 0;
+      }
+
+      .heroLinks {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+
+        .heroLink {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.75rem;
+          background: #ffffff;
+          color: #000000;
+          padding: 1rem 2rem;
+          border-radius: 8px;
+          text-decoration: none;
+          font-weight: 600;
+          transition: all 0.3s ease;
+
+          &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+          }
+
+          &.secondary {
+            background: transparent;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+
+            &:hover {
+              background: #ffffff;
+              color: #000000;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Main Image
+  .mainImage {
+    padding: 0;
+
+    /* --- DƏYİŞİKLİK BURADA BAŞLAYIR --- */
+    .imageWrapper {
+      width: 100%;
+      aspect-ratio: 21/9;
+      background: #0a0a0a;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+      overflow: hidden;
+
+      .detailImage {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    /* --- DƏYİŞİKLİK BURADA BİTİR --- */
+  }
+
+  // Overview Section
+  .overviewSection {
+    padding: 6rem 2rem;
+    border-bottom: 1px solid #1a1a1a;
+
+    .overviewGrid {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 6rem;
+
+      .overviewSidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+
+        .sidebarBlock {
+          h3 {
+            font-size: 0.75rem;
+            color: #808080;
+            margin: 0 0 1rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+          }
+
+          p {
+            font-size: 1.125rem;
+            color: #ffffff;
+            margin: 0;
+            font-weight: 500;
+          }
+
+          .stackList {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            span {
+              font-size: 1rem;
+              color: #ffffff;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+
+      .overviewContent {
+        h2 {
+          font-size: clamp(1.75rem, 3vw, 2.5rem);
+          font-weight: 600;
+          color: #ffffff;
+          margin: 0 0 2rem 0;
+          letter-spacing: -0.02em;
+        }
+
+        p {
+          font-size: 1.25rem;
+          line-height: 1.8;
+          color: #808080;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  // Technologies Section
+  .techSection {
+    padding: 6rem 2rem;
+    border-bottom: 1px solid #1a1a1a;
+
+    h2 {
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 600;
+      color: #ffffff;
+      margin: 0 0 3rem 0;
+      letter-spacing: -0.02em;
+    }
+
+    .techGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+
+      .techItem {
+        padding: 2rem;
+        border: 1px solid #1a1a1a;
+        border-radius: 8px;
+        text-align: center;
+        transition: all 0.3s ease;
+
+        &:hover {
+          border-color: #333333;
+          transform: translateY(-3px);
+        }
+
+        span {
+          font-size: 1.125rem;
+          color: #ffffff;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  // Next Project
+  .nextSection {
+    padding: 6rem 2rem;
+
+    .nextContent {
+      padding: 4rem 0;
+      border-top: 1px solid #1a1a1a;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      .nextLabel {
+        font-size: 0.875rem;
+        color: #808080;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 600;
+      }
+
+      .nextLink {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration: none;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateX(5px);
+
+          svg {
+            transform: translateX(5px);
+          }
+        }
+
+        .nextTitle {
+          font-size: clamp(1.75rem, 4vw, 3rem);
+          font-weight: 600;
+          color: #ffffff;
+        }
+
+        svg {
+          color: #ffffff;
+          flex-shrink: 0;
+          transition: transform 0.3s ease;
+        }
+      }
+    }
+  }
+
+  // Not Found
+  .notFound {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 4rem 2rem;
+
+    h2 {
+      font-size: 2rem;
+      color: #ffffff;
+      margin: 0;
+    }
+
+    .backButton {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: #ffffff;
+      color: #000000;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      border: none;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  // Responsive
+  @media (max-width: 1024px) {
+    .overviewSection .overviewGrid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .nameHeader {
+      padding: 4rem 1rem 2rem;
+    }
+
+    .projectHero,
+    .overviewSection,
+    .techSection,
+    .nextSection {
+      padding: 3rem 1rem;
+    }
+
+    .container {
+      padding: 0 1rem;
+    }
+
+    .projectHero .heroContent .heroLinks {
+      flex-direction: column;
+
+      .heroLink {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    .techSection .techGrid {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .nextSection .nextContent .nextLink {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  }
+}

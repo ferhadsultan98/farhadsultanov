@@ -1,0 +1,428 @@
+// pages/Experience.scss
+.experiencePage {
+  width: 100%;
+  min-height: 100vh;
+  background: #000000;
+  color: #ffffff;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .sectionHeader {
+    text-align: center;
+    margin-bottom: 4rem;
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      color: #ffffff;
+      margin: 0 0 1rem 0;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      font-size: 1.125rem;
+      color: #808080;
+    }
+  }
+
+  // Name Header with Animated Gradient
+  .nameHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 2rem 4rem;
+    border-bottom: 1px solid #1a1a1a;
+
+    .animatedName {
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin: 0;
+      background: linear-gradient(
+        90deg,
+        #ffffff 0%,
+        #808080 25%,
+        #ffffff 50%,
+        #808080 75%,
+        #ffffff 100%
+      );
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textShine 4s linear infinite;
+    }
+  }
+
+  @keyframes textShine {
+    0% {
+      background-position: 0% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+
+  // Work Experience Section
+  .workExperienceSection {
+    padding: 5rem 0;
+    border-bottom: 1px solid #1a1a1a;
+
+    .experienceList {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      .experienceCard {
+        padding: 2.5rem;
+        border: 1px solid #1a1a1a;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          border-color: #333333;
+          transform: translateY(-3px);
+        }
+
+        .experienceHeader {
+          margin-bottom: 1.5rem;
+
+          .experienceTop {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+
+            .experienceTitle {
+              flex: 1;
+
+              h3 {
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: #ffffff;
+                margin: 0 0 0.75rem 0;
+              }
+
+              .experienceMeta {
+                display: flex;
+                gap: 2rem;
+                flex-wrap: wrap;
+
+                span {
+                  display: flex;
+                  align-items: center;
+                  gap: 0.5rem;
+                  color: #808080;
+                  font-size: 0.9rem;
+
+                  svg {
+                    flex-shrink: 0;
+                  }
+                }
+              }
+            }
+
+            .experienceYear {
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              color: #808080;
+              font-size: 0.875rem;
+              font-weight: 600;
+              text-transform: uppercase;
+              letter-spacing: 0.05em;
+              white-space: nowrap;
+
+              svg {
+                flex-shrink: 0;
+              }
+            }
+          }
+
+          .experienceType {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border: 1px solid #1a1a1a;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            color: #808080;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 500;
+          }
+        }
+
+        .experienceDescription {
+          color: #808080;
+          line-height: 1.7;
+          margin: 0 0 1.5rem 0;
+          font-size: 1.125rem;
+        }
+
+        .experienceDetails {
+          margin-bottom: 1.5rem;
+
+          .detailBlock {
+            h4 {
+              font-size: 0.875rem;
+              color: #ffffff;
+              margin: 0 0 1rem 0;
+              text-transform: uppercase;
+              letter-spacing: 0.1em;
+              font-weight: 600;
+            }
+
+            .techTags {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 0.5rem;
+
+              .techTag {
+                padding: 0.5rem 1rem;
+                border: 1px solid #1a1a1a;
+                border-radius: 8px;
+                font-size: 0.875rem;
+                color: #808080;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                font-weight: 500;
+                transition: all 0.3s ease;
+
+                &:hover {
+                  border-color: #333333;
+                  color: #ffffff;
+                }
+              }
+            }
+          }
+        }
+
+        .viewDetailsBtn {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.75rem;
+          padding: 0.875rem 1.75rem;
+          background: transparent;
+          border: 1px solid #ffffff;
+          border-radius: 8px;
+          color: #ffffff;
+          text-decoration: none;
+          font-size: 0.95rem;
+          font-weight: 500;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background: #ffffff;
+            color: #000000;
+            transform: translateX(3px);
+
+            svg {
+              transform: translateX(3px);
+            }
+          }
+
+          svg {
+            transition: transform 0.3s ease;
+          }
+        }
+      }
+    }
+  }
+
+  // Certifications Section
+  .certificationsSection {
+    padding: 5rem 0;
+
+    .certificationsGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+
+      .certCard {
+        padding: 2rem;
+        border: 1px solid #1a1a1a;
+        border-radius: 8px;
+        text-align: center;
+        transition: all 0.3s ease;
+
+        &:hover {
+          border-color: #333333;
+          transform: translateY(-3px);
+        }
+
+        svg {
+          color: #ffffff;
+          margin-bottom: 1rem;
+        }
+
+        h3 {
+          font-size: 1.2rem;
+          font-weight: 600;
+          color: #ffffff;
+          margin: 0 0 0.5rem 0;
+        }
+
+        .certIssuer {
+          color: #808080;
+          margin: 0 0 1rem 0;
+          font-size: 0.95rem;
+        }
+
+        .certMeta {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          padding-top: 1rem;
+          border-top: 1px solid #1a1a1a;
+
+          span {
+            font-size: 0.75rem;
+            color: #808080;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 500;
+          }
+
+          .certYear {
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+
+  // Responsive
+  @media (max-width: 768px) {
+    .nameHeader {
+      padding: 4rem 1rem 3rem;
+
+      .animatedName {
+        font-size: clamp(2rem, 10vw, 3rem);
+      }
+    }
+
+    .workExperienceSection,
+    .certificationsSection {
+      padding: 4rem 0;
+    }
+
+    .container {
+      padding: 0 1rem;
+    }
+
+    .workExperienceSection .experienceList .experienceCard {
+      padding: 1.5rem;
+
+      .experienceHeader .experienceTop {
+        flex-direction: column;
+        gap: 1rem;
+
+        .experienceYear {
+          align-self: flex-start;
+        }
+      }
+
+      .experienceDescription {
+        font-size: 1rem;
+      }
+
+      .viewDetailsBtn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    .certificationsSection .certificationsGrid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .nameHeader {
+      padding: 3rem 1rem 2.5rem;
+    }
+
+    .workExperienceSection,
+    .certificationsSection {
+      padding: 3rem 0;
+    }
+
+    .sectionHeader {
+      margin-bottom: 3rem;
+
+      h2 {
+        font-size: clamp(1.5rem, 6vw, 2rem);
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    .workExperienceSection .experienceList {
+      gap: 1.5rem;
+
+      .experienceCard {
+        padding: 1.25rem;
+
+        .experienceHeader {
+          margin-bottom: 1.25rem;
+
+          .experienceTop .experienceTitle {
+            h3 {
+              font-size: 1.25rem;
+            }
+
+            .experienceMeta {
+              gap: 1rem;
+              font-size: 0.85rem;
+            }
+          }
+        }
+
+        .experienceDescription {
+          font-size: 0.95rem;
+          margin-bottom: 1.25rem;
+        }
+
+        .experienceDetails {
+          margin-bottom: 1.25rem;
+
+          .detailBlock .techTags {
+            gap: 0.4rem;
+
+            .techTag {
+              padding: 0.4rem 0.875rem;
+              font-size: 0.8rem;
+            }
+          }
+        }
+
+        .viewDetailsBtn {
+          padding: 0.75rem 1.5rem;
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    .certificationsSection .certificationsGrid {
+      gap: 1.5rem;
+
+      .certCard {
+        padding: 1.5rem;
+
+        h3 {
+          font-size: 1.1rem;
+        }
+
+        .certIssuer {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}

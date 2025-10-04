@@ -1,0 +1,82 @@
+{
+  "categories": [
+    {
+      "id": "all",
+      "name": "All"
+    },
+    {
+      "id": "development",
+      "name": "Development"
+    },
+    {
+      "id": "design",
+      "name": "Design"
+    },
+    {
+      "id": "thoughts",
+      "name": "Thoughts"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "slug": "getting-started-with-react",
+      "title": "Getting Started with React in 2024",
+      "excerpt": "React əsasları və müasir development praktikalar haqqında başlanğıc bələdçisi.",
+      "category": "development",
+      "date": "Oct 4, 2024",
+      "readTime": "5 min read",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+    },
+    {
+      "id": 2,
+      "slug": "minimalist-design-principles",
+      "title": "Minimalist Design Principles",
+      "excerpt": "Az və ya çox deyil - minimalist dizaynın əsas prinsipləri və nə vaxt istifadə etmək lazımdır.",
+      "category": "design",
+      "date": "Sep 28, 2024",
+      "readTime": "4 min read",
+      "image": "https://images.unsplash.com/photo-1518655048521-f130df041f66"
+    },
+    {
+      "id": 3,
+      "slug": "my-developer-journey",
+      "title": "My Developer Journey",
+      "excerpt": "Junior developer-dən senior developer-ə qədər olan yolum və öyrəndiklərim.",
+      "category": "thoughts",
+      "date": "Sep 15, 2024",
+      "readTime": "8 min read",
+      "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713"
+    },
+    {
+      "id": 4,
+      "slug": "typescript-best-practices",
+      "title": "TypeScript Best Practices",
+      "excerpt": "TypeScript ilə işləyərkən bilməli olduğunuz ən yaxşı praktikalar və tövsiyələr.",
+      "category": "development",
+      "date": "Aug 20, 2024",
+      "readTime": "6 min read",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg"
+    },
+    {
+      "id": 5,
+      "slug": "creating-consistent-ui",
+      "title": "Creating Consistent UI Systems",
+      "excerpt": "Böyük layihələr üçün ardıcıl və scalable UI sistemlərin yaradılması.",
+      "category": "design",
+      "date": "Aug 5, 2024",
+      "readTime": "7 min read",
+      "image": "https://images.unsplash.com/photo-1611648003185-bc9374e27a13"
+    },
+    {
+      "id": 6,
+      "slug": "work-life-balance",
+      "title": "Maintaining Work-Life Balance",
+      "excerpt": "Developer olaraq iş və şəxsi həyat arasında balansı qorumaq.",
+      "category": "thoughts",
+      "date": "Jul 18, 2024",
+      "readTime": "5 min read",
+      "image": "https://images.unsplash.com/photo-1543286386-713bdd548da4"
+    }
+  ]
+}

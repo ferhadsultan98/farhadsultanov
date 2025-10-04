@@ -1,0 +1,151 @@
+// pages/NotFound.scss
+.notFoundPage {
+  width: 100%;
+  min-height: 100vh;
+  background: #000000;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+
+  .container {
+    max-width: 800px;
+    width: 100%;
+  }
+
+  .errorContent {
+    text-align: center;
+
+    .errorCode {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+
+      .number {
+        font-size: clamp(6rem, 15vw, 12rem);
+        font-weight: 700;
+        line-height: 1;
+        background: linear-gradient(
+          90deg,
+          #ffffff 0%,
+          #808080 25%,
+          #ffffff 50%,
+          #808080 75%,
+          #ffffff 100%
+        );
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: textShine 4s linear infinite;
+      }
+    }
+
+    @keyframes textShine {
+      0% {
+        background-position: 0% center;
+      }
+      100% {
+        background-position: 200% center;
+      }
+    }
+
+    .errorTitle {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      color: #ffffff;
+      margin: 0 0 1.5rem 0;
+      letter-spacing: -0.02em;
+    }
+
+    .errorMessage {
+      font-size: 1.25rem;
+      color: #808080;
+      line-height: 1.7;
+      margin: 0 0 3rem 0;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .errorActions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 4rem;
+      flex-wrap: wrap;
+
+      .primaryButton {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        background: #ffffff;
+        color: #000000;
+        padding: 1.25rem 2.5rem;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+        }
+      }
+
+      .secondaryButton {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        background: transparent;
+        color: #ffffff;
+        padding: 1.25rem 2.5rem;
+        border: 1px solid #ffffff;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: #ffffff;
+          color: #000000;
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+
+  // Responsive
+  @media (max-width: 768px) {
+    padding: 3rem 1rem;
+
+    .errorContent {
+      .errorCode {
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .errorMessage {
+        font-size: 1.125rem;
+        margin-bottom: 2rem;
+      }
+
+      .errorActions {
+        flex-direction: column;
+        margin-bottom: 3rem;
+
+        .primaryButton,
+        .secondaryButton {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

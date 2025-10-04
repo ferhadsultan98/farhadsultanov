@@ -1,0 +1,388 @@
+// pages/ExperienceDetails.scss
+.experienceDetailsPage {
+  width: 100%;
+  min-height: 100vh;
+  background: #000000;
+  color: #ffffff;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  // Header
+  .expHeader {
+    padding: 6rem 2rem 4rem;
+    border-bottom: 1px solid #1a1a1a;
+
+    .backButton {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      border: 1px solid #1a1a1a;
+      color: #ffffff;
+      padding: 0.75rem 1.25rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-bottom: 3rem;
+
+      &:hover {
+        border-color: #333333;
+        transform: translateX(-3px);
+      }
+    }
+
+    .expMeta {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+
+      .expType {
+        padding: 0.5rem 1rem;
+        background: transparent;
+        border: 1px solid #ffffff;
+        border-radius: 8px;
+        font-size: 0.75rem;
+        color: #ffffff;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 600;
+      }
+
+      .expYear {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #808080;
+        font-size: 0.9rem;
+      }
+    }
+
+    .expRole {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 1.5rem 0;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+    }
+
+    .expCompanyInfo {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+
+      span {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 1.125rem;
+        color: #ffffff;
+
+        svg {
+          color: #808080;
+        }
+      }
+    }
+
+    .expDescription {
+      font-size: 1.25rem;
+      color: #808080;
+      line-height: 1.8;
+      margin: 0;
+      max-width: 900px;
+    }
+  }
+
+  // Content
+  .expContent {
+    padding: 6rem 2rem;
+
+    .contentBlock {
+      margin-bottom: 5rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      h2 {
+        font-size: clamp(1.75rem, 3vw, 2.5rem);
+        font-weight: 600;
+        color: #ffffff;
+        margin: 0 0 2rem 0;
+        letter-spacing: -0.02em;
+      }
+
+      .respList {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        li {
+          display: flex;
+          align-items: flex-start;
+          gap: 1rem;
+          padding: 1.5rem;
+          border: 1px solid #1a1a1a;
+          border-radius: 8px;
+          transition: all 0.3s ease;
+
+          &:hover {
+            border-color: #333333;
+          }
+
+          svg {
+            color: #ffffff;
+            flex-shrink: 0;
+            margin-top: 0.25rem;
+          }
+
+          span {
+            font-size: 1.125rem;
+            color: #808080;
+            line-height: 1.6;
+          }
+        }
+      }
+
+      .projectsGrid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+
+        .projectItem {
+          padding: 2rem;
+          border: 1px solid #1a1a1a;
+          border-radius: 8px;
+          transition: all 0.3s ease;
+
+          &:hover {
+            border-color: #333333;
+            transform: translateY(-3px);
+          }
+
+          h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 0 0 1rem 0;
+          }
+
+          p {
+            font-size: 1.125rem;
+            color: #808080;
+            line-height: 1.7;
+            margin: 0 0 1.5rem 0;
+          }
+
+          .impact {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: transparent;
+            border: 1px solid #1a1a1a;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            color: #ffffff;
+            font-weight: 500;
+
+            svg {
+              color: #808080;
+            }
+          }
+        }
+      }
+
+      .achievementsGrid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+
+        .achievementCard {
+          padding: 2rem;
+          border: 1px solid #1a1a1a;
+          border-radius: 8px;
+          text-align: center;
+          transition: all 0.3s ease;
+
+          &:hover {
+            border-color: #333333;
+            transform: translateY(-3px);
+          }
+
+          svg {
+            color: #ffffff;
+            margin-bottom: 1rem;
+          }
+
+          p {
+            font-size: 1.125rem;
+            color: #808080;
+            margin: 0;
+            line-height: 1.6;
+          }
+        }
+      }
+
+      .techGrid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        .techBadge {
+          padding: 0.75rem 1.5rem;
+          border: 1px solid #1a1a1a;
+          border-radius: 8px;
+          font-size: 1rem;
+          color: #ffffff;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          font-weight: 500;
+          transition: all 0.3s ease;
+
+          &:hover {
+            border-color: #333333;
+          }
+        }
+      }
+    }
+  }
+
+  // Next Experience
+  .nextExp {
+    padding: 6rem 2rem;
+    border-top: 1px solid #1a1a1a;
+
+    .nextExpLink {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 3rem;
+      border: 1px solid #1a1a1a;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+
+      &:hover {
+        border-color: #333333;
+        transform: translateY(-3px);
+
+        svg {
+          transform: translateX(5px);
+        }
+      }
+
+      .nextLabel {
+        font-size: 0.875rem;
+        color: #808080;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 600;
+      }
+
+      .nextInfo {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        .nextRole {
+          font-size: 1.75rem;
+          font-weight: 600;
+          color: #ffffff;
+        }
+
+        .nextCompany {
+          font-size: 1.125rem;
+          color: #808080;
+        }
+      }
+
+      svg {
+        color: #ffffff;
+        flex-shrink: 0;
+        transition: transform 0.3s ease;
+      }
+    }
+  }
+
+  // Not Found
+  .notFound {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 4rem 2rem;
+
+    h2 {
+      font-size: 2rem;
+      color: #ffffff;
+      margin: 0;
+    }
+
+    .backButton {
+      background: #ffffff;
+      color: #000000;
+      border: none;
+      padding: 1rem 2rem;
+      font-weight: 600;
+    }
+  }
+
+  // Responsive
+  @media (max-width: 768px) {
+    .expHeader {
+      padding: 4rem 1rem 3rem;
+
+      .expCompanyInfo {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+
+    .expContent {
+      padding: 4rem 1rem;
+
+      .contentBlock {
+        margin-bottom: 3rem;
+
+        .projectsGrid {
+          grid-template-columns: 1fr;
+        }
+
+        .achievementsGrid {
+          grid-template-columns: 1fr;
+        }
+      }
+    }
+
+    .nextExp {
+      padding: 4rem 1rem;
+
+      .nextExpLink {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem;
+      }
+    }
+
+    .container {
+      padding: 0 1rem;
+    }
+  }
+}

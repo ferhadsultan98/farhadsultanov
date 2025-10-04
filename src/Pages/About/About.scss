@@ -1,0 +1,419 @@
+// pages/About.scss
+.aboutPage {
+  width: 100%;
+  min-height: 100vh;
+  background: #000000;
+  color: #ffffff;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .sectionHeader {
+    text-align: center;
+    margin-bottom: 4rem;
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      color: #ffffff;
+      margin: 0 0 1rem 0;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      font-size: 1.125rem;
+      color: #808080;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  }
+
+   .nameHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 2rem 4rem;
+    border-bottom: 1px solid #1a1a1a;
+
+    .animatedName {
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin: 0;
+      background: linear-gradient(
+        90deg,
+        #ffffff 0%,
+        #808080 25%,
+        #ffffff 50%,
+        #808080 75%,
+        #ffffff 100%
+      );
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textShine 4s linear infinite;
+    }
+  }
+  @keyframes textShine {
+    0% {
+      background-position: 0% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+
+  .quickInfo {
+    padding: 5rem 2rem;
+    border-bottom: 1px solid #1a1a1a;
+
+    .infoContainer {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+
+      .infoCard {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.5rem;
+        border: 1px solid #1a1a1a;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          border-color: #333333;
+          transform: translateY(-2px);
+        }
+
+        svg {
+          color: #ffffff;
+          flex-shrink: 0;
+        }
+
+        .infoContent {
+          h4 {
+            font-size: 0.75rem;
+            color: #808080;
+            margin: 0 0 0.25rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 500;
+          }
+          p {
+            font-size: 1rem;
+            color: #ffffff;
+            margin: 0;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+
+  .skillsSection {
+    padding: 6rem 0;
+    border-bottom: 1px solid #1a1a1a;
+
+    .skillsFilter {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+
+      .filterBtn {
+        background: transparent;
+        border: 1px solid #1a1a1a;
+        color: #808080;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+
+        &:hover {
+          border-color: #333333;
+          color: #ffffff;
+        }
+
+        &.active {
+          background: #ffffff;
+          border-color: #ffffff;
+          color: #000000;
+        }
+      }
+    }
+
+    .skillsGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+
+      .skillCard {
+        padding: 2rem;
+        border: 1px solid #1a1a1a;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          border-color: #333333;
+          transform: translateY(-3px);
+        }
+
+        .skillTop {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 1rem;
+
+          .skillName {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #ffffff;
+          }
+          .skillPercent {
+            font-size: 0.875rem;
+            color: #808080;
+            font-weight: 600;
+          }
+        }
+
+        .skillBarContainer {
+          height: 4px;
+          background: #1a1a1a;
+          border-radius: 8px;
+          overflow: hidden;
+          margin-bottom: 1rem;
+
+          .skillBar {
+            height: 100%;
+            background: #ffffff;
+            border-radius: 8px;
+            transition: width 1.5s cubic-bezier(0.65, 0, 0.35, 1);
+          }
+        }
+
+        .skillTag {
+          display: inline-block;
+          font-size: 0.75rem;
+          color: #808080;
+          padding: 0.4rem 0.9rem;
+          border: 1px solid #1a1a1a;
+          border-radius: 8px;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .educationSection {
+    padding: 5rem 0;
+    border-bottom: 1px solid #1a1a1a;
+
+    .educationList {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      .educationCard {
+        padding: 2.5rem;
+        border: 1px solid #1a1a1a;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          border-color: #333333;
+        }
+
+        .educationHeader {
+          margin-bottom: 1.5rem;
+
+          .educationTop {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            h3 {
+              font-size: 1.4rem;
+              font-weight: 600;
+              color: #ffffff;
+              margin: 0 0 0.5rem 0;
+            }
+
+            .institution {
+              font-size: 1.1rem;
+              color: #808080;
+              margin: 0 0 0.5rem 0;
+            }
+
+            .location {
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              color: #808080;
+              font-size: 0.875rem;
+
+              svg {
+                flex-shrink: 0;
+              }
+            }
+
+            .educationYear {
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              color: #808080;
+              font-size: 0.875rem;
+              font-weight: 600;
+              text-transform: uppercase;
+              letter-spacing: 0.05em;
+              white-space: nowrap;
+
+              svg {
+                flex-shrink: 0;
+              }
+            }
+          }
+        }
+
+        .educationDescription {
+          color: #808080;
+          line-height: 1.7;
+          margin: 0 0 1.5rem 0;
+        }
+
+        .educationAchievements {
+          h4 {
+            font-size: 0.875rem;
+            color: #ffffff;
+            margin: 0 0 1rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+          }
+
+          ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+              color: #808080;
+              margin-bottom: 0.75rem;
+              padding-left: 1.25rem;
+              position: relative;
+              line-height: 1.6;
+
+              &::before {
+                content: '—';
+                position: absolute;
+                left: 0;
+                color: #ffffff;
+              }
+
+              &:last-child {
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .interestsSection {
+    padding: 6rem 0;
+    border-bottom: 1px solid #1a1a1a;
+
+    .interestsGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+
+      .interestCard {
+        padding: 2.5rem 2rem;
+        border: 1px solid #1a1a1a;
+        border-radius: 8px;
+        text-align: center;
+        transition: all 0.3s ease;
+
+        &:hover {
+          border-color: #333333;
+          transform: translateY(-5px);
+          svg {
+            transform: scale(1.1);
+          }
+        }
+
+        svg {
+          color: #ffffff;
+          margin-bottom: 1.5rem;
+          transition: all 0.3s ease;
+        }
+
+        h4 {
+          font-size: 1.25rem;
+          font-weight: 600;
+          color: #ffffff;
+          margin: 0 0 0.75rem 0;
+        }
+
+        p {
+          color: #808080;
+          margin: 0;
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+
+  // Responsive
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 1rem;
+    }
+    
+    .nameHeader {
+      padding: 3rem 1rem;
+      .animatedName {
+        font-size: clamp(2rem, 10vw, 3rem);
+      }
+    }
+
+    .quickInfo .infoContainer {
+      grid-template-columns: 1fr;
+    }
+
+    .skillsSection,
+    .educationSection,
+    .interestsSection {
+      padding: 4rem 0;
+    }
+
+    .educationSection .educationList .educationCard {
+      padding: 1.5rem;
+
+      .educationHeader .educationTop {
+        flex-direction: column;
+        gap: 1rem;
+
+        .educationYear {
+          align-self: flex-start;
+        }
+      }
+    }
+  }
+}
