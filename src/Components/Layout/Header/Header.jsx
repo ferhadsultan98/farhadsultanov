@@ -15,12 +15,24 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
+
   const navItems = [
-    { name: 'About', href: '/about' },          // "/" əlavə edildi
+    { name: 'About', href: '/about' },
     { name: 'Projects', href: '/projects' },
-    { name: 'Experience', href: '/experience' }, // "Experiences" yerinə "Experience"
+    { name: 'Experience', href: '/experience' },
     { name: 'Blog', href: '/blog' },
-    { name: 'Contact', href: '/contact' }        // "/" əlavə edildi
+    { name: 'Contact', href: '/contact' }
   ];
 
   const handleNavClick = () => {
@@ -28,39 +40,49 @@ const Header = () => {
   };
 
   return (
-    <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="headerContainer">
-        <Link to="/" className="headerLogo">
-          <h2>Farhad.S</h2>
-        </Link>
+    <>
+      <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
+        <div className="headerContainer">
+          <Link to="/" className="headerLogo">
+            <h2>Farhad.S</h2>
+          </Link>
 
-        <nav className={`headerNav ${isMenuOpen ? 'active' : ''}`}>
-          <ul className="navList">
-            {navItems.map((item, index) => (
-              <li key={index} className="navItem">
-                <Link to={item.href} className="navLink" onClick={handleNavClick}>
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+          <div className="mobileMenuToggle">
+            <Hamburger
+              toggled={isMenuOpen}
+              toggle={setIsMenuOpen}
+              size={24}
+              duration={0.6}
+              distance="md"
+              color="#ffffff"
+              easing="ease-in-out"
+              rounded
+              label="Show menu"
+            />
+          </div>
+        </div>
+      </header>
 
-        <div className="mobileMenuToggle">
-          <Hamburger
-            toggled={isMenuOpen}
-            toggle={setIsMenuOpen}
-            size={22}
-            duration={0.6}
-            distance="md"
-            color="#cccccc"
-            easing="ease-in-out"
-            rounded
-            label="Show menu"
-          />
+      <div className={`fullscreenMenu ${isMenuOpen ? 'active' : ''}`}>
+        <div className="fullscreenMenuContent">
+          <nav className="fullscreenNav">
+            <ul className="fullscreenNavList">
+              {navItems.map((item, index) => (
+                <li key={index} className="fullscreenNavItem">
+                  <Link 
+                    to={item.href} 
+                    className="fullscreenNavLink" 
+                    onClick={handleNavClick}
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
       </div>
-    </header>
+    </>
   );
 };
 
