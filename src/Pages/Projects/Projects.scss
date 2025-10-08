@@ -1,11 +1,9 @@
-// pages/Projects.scss
 .projectsPage {
   width: 100%;
   min-height: 100vh;
   background: #000000;
   color: #ffffff;
 
-  // Name Header with Animated Gradient
   .nameHeader {
     display: flex;
     align-items: center;
@@ -169,18 +167,39 @@
           overflow: hidden;
           background: #0a0a0a;
 
-          /* --- DƏYİŞİKLİK BURADA BAŞLAYIR --- */
-          .projectImage {
+          // Image Carousel - SADƏ VƏ IŞLƏYƏN
+          .imageCarouselWrapper {
+            position: relative;
             width: 100%;
             height: 100%;
-            object-fit: cover; // Şəkli qırpır, amma nisbəti qoruyur
-            transition: transform 0.4s ease;
-          }
+            cursor: pointer;
 
-          &:hover .projectImage {
-            transform: scale(1.05); // Hover zamanı kiçik zoom effekti
+            .imagesStack {
+              position: relative;
+              width: 100%;
+              height: 100%;
+
+              .slideImage {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: opacity 0.5s ease-in-out;
+                
+                &.visible {
+                  opacity: 1 !important;
+                  z-index: 2 !important;
+                }
+                
+                &.hidden {
+                  opacity: 0 !important;
+                  z-index: 1 !important;
+                }
+              }
+            }
           }
-          /* --- DƏYİŞİKLİK BURADA BİTİR --- */
 
           .projectOverlay {
             position: absolute;
@@ -188,16 +207,23 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7); // Bir az daha şəffaf
+            background: rgba(0, 0, 0, 0.7);
             display: flex;
             align-items: center;
             justify-content: center;
             opacity: 0;
             transition: opacity 0.3s ease;
+            z-index: 50;
+            pointer-events: none;
+
+            &:hover {
+              pointer-events: auto;
+            }
 
             .projectActions {
               display: flex;
               gap: 1rem;
+              pointer-events: auto;
 
               .projectAction {
                 display: flex;
@@ -210,6 +236,7 @@
                 border-radius: 8px;
                 text-decoration: none;
                 transition: all 0.3s ease;
+                cursor: pointer;
 
                 &:hover {
                   transform: scale(1.1);
@@ -305,7 +332,6 @@
     }
   }
 
-  // Responsive
   @media (max-width: 768px) {
     .nameHeader {
       padding: 4rem 1rem 3rem;

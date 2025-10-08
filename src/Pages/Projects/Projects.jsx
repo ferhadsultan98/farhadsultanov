@@ -1,5 +1,5 @@
 // pages/Projects.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   ExternalLink,
   Github,
@@ -11,10 +11,9 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import projectsData from "./projectsData.json"; // Datanı import edirik
+import projectsData from "./projectsData.json";
 import "./Projects.scss";
 
-// JSON-dakı ikon adlarını real ikon komponentləri ilə əlaqələndirən obyekt
 const iconMap = {
   Globe: Globe,
   Code: Code,
@@ -22,11 +21,104 @@ const iconMap = {
   Palette: Palette,
 };
 
+// Image Carousel Component - Sadələşdirilmiş və Debug
+const ImageCarousel = ({ images, alt }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const timerRef = useRef(null);
+
+  // Debug: Console-da nə baş verir görək
+  useEffect(() => {
+    console.log('Hover status:', isHovered);
+    console.log('Images count:', images?.length);
+    console.log('Current index:', currentIndex);
+  }, [isHovered, currentIndex, images]);
+
+  // Slider Effect
+  useEffect(() => {
+    // Təmizlə
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+      timerRef.current = null;
+    }
+
+    if (isHovered && images && images.length > 1) {
+      console.log('Starting slider...');
+      
+      timerRef.current = setInterval(() => {
+        setCurrentIndex((prevIndex) => {
+          const nextIndex = (prevIndex + 1) % images.length;
+          console.log('Changing from', prevIndex, 'to', nextIndex);
+          return nextIndex;
+        });
+      }, 1000);
+    } else if (!isHovered) {
+      console.log('Resetting to first image');
+      setCurrentIndex(0);
+    }
+
+    // Cleanup
+    return () => {
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+        timerRef.current = null;
+      }
+    };
+  }, [isHovered, images]);
+
+  if (!images || images.length === 0) {
+    return <div className="noImage">No Images</div>;
+  }
+
+  return (
+    <div
+      className="imageCarouselWrapper"
+      onMouseEnter={() => {
+        console.log('MOUSE ENTER!');
+        setIsHovered(true);
+      }}
+      onMouseLeave={() => {
+        console.log('MOUSE LEAVE!');
+        setIsHovered(false);
+      }}
+    >
+      <div className="imagesStack">
+        {images.map((imageSrc, idx) => (
+          <img
+            key={idx}
+            src={imageSrc}
+            alt={`${alt} ${idx + 1}`}
+            className={`slideImage ${idx === currentIndex ? 'visible' : 'hidden'}`}
+            style={{
+              opacity: idx === currentIndex ? 1 : 0,
+              zIndex: idx === currentIndex ? 2 : 1
+            }}
+          />
+        ))}
+      </div>
+      
+      {/* Debug indicator */}
+      <div className="debugInfo" style={{
+        position: 'absolute',
+        bottom: '5px',
+        right: '5px',
+        background: 'rgba(0,0,0,0.7)',
+        color: 'white',
+        padding: '2px 5px',
+        fontSize: '10px',
+        borderRadius: '3px',
+        zIndex: 100
+      }}>
+        {currentIndex + 1}/{images.length} {isHovered ? '▶' : '⏸'}
+      </div>
+    </div>
+  );
+};
+
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
 
-  // Datanı import edilmiş obyektdən alırıq
   const { categories, projects } = projectsData;
 
   const filteredProjects = projects.filter((project) => {
@@ -42,19 +134,16 @@ const Projects = () => {
 
   return (
     <div className="projectsPage">
-      {/* Name Header */}
       <section className="nameHeader">
         <h1 className="animatedName">My Projects</h1>
       </section>
 
-      {/* All Projects */}
       <section className="allProjectsSection">
         <div className="sectionHeader">
           <h2>All Projects</h2>
           <p>Bütün layihələrimi kəşf edin</p>
         </div>
 
-        {/* Filters & Search */}
         <div className="projectsControls">
           <div className="searchBox">
             <Search size={20} />
@@ -68,7 +157,6 @@ const Projects = () => {
 
           <div className="filterTabs">
             {categories.map((category) => {
-              // Düzgün ikonu iconMap-dən alırıq
               const IconComponent = iconMap[category.icon];
               return (
                 <button
@@ -86,18 +174,11 @@ const Projects = () => {
           </div>
         </div>
 
-        {/* Projects Grid */}
         <div className="projectsGrid">
           {filteredProjects.map((project) => (
             <div key={project.id} className="projectCard">
               <div className="projectImageContainer">
-                {/* --- DƏYİŞİKLİK BURADA BAŞLAYIR --- */}
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="projectImage"
-                />
-                {/* --- DƏYİŞİKLİK BURADA BİTİR --- */}
+                <ImageCarousel images={project.images} alt={project.title} />
                 <div className="projectOverlay">
                   <div className="projectActions">
                     {project.liveUrl && (
@@ -106,6 +187,7 @@ const Projects = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="projectAction"
+                        onClick={(e) => e.stopPropagation()}
                       >
                         <ExternalLink size={18} />
                       </a>
@@ -116,6 +198,7 @@ const Projects = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="projectAction"
+                        onClick={(e) => e.stopPropagation()}
                       >
                         <Github size={18} />
                       </a>

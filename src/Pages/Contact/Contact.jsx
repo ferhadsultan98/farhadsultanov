@@ -47,14 +47,14 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'hello@farhadsultanov.com',
-      link: 'mailto:hello@farhadsultanov.com'
+      value: 'sultanoworks@gmail.com',
+      link: 'mailto:sultanoworks@gmail.com'
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+994 50 123 45 67',
-      link: 'tel:+994501234567'
+      value: '+994 55 525 41 93',
+      link: 'tel:+994555254193'
     },
     {
       icon: MapPin,

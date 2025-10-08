@@ -6,16 +6,12 @@
   transform: translateX(-50%);
   width: calc(100% - 100px);
   max-width: 1500px;
-  background: rgba(0, 0, 0, 0.9);
-  backdrop-filter: blur(10px);
   transition: all 0.3s ease;
   z-index: 20;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   border-radius: 25px;
 
   &.scrolled {
-    background: rgba(0, 0, 0, 0.95);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+
     top: 15px;
   }
 
