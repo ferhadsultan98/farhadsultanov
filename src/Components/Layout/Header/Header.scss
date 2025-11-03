@@ -1,4 +1,9 @@
-// Header.scss
+// Header.scss - TAM KOD
+
+// ============================================
+// HEADER COMPONENT
+// ============================================
+
 .header {
   position: fixed;
   top: 20px;
@@ -11,7 +16,6 @@
   border-radius: 25px;
 
   &.scrolled {
-
     top: 15px;
   }
 
@@ -34,6 +38,10 @@
         font-weight: 700;
         margin: 0;
         transition: color 0.3s ease;
+
+        &:hover {
+          color: #e0e0e0;
+        }
       }
     }
 
@@ -44,6 +52,15 @@
       position: relative;
       z-index: 21;
       cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      &:active {
+        transform: scale(0.95);
+      }
     }
   }
 
@@ -73,6 +90,7 @@
 
     .headerContainer {
       height: 55px;
+      padding: 0 1rem;
 
       .headerLogo h2 {
         font-size: 1.3rem;
@@ -82,8 +100,11 @@
 
   @media (max-width: 360px) {
     width: calc(100% - 20px);
+    border-radius: 18px;
 
     .headerContainer {
+      padding: 0 0.75rem;
+
       .headerLogo h2 {
         font-size: 1.2rem;
       }
@@ -91,15 +112,16 @@
   }
 }
 
-// Tam ekran overlay menyu
+// ============================================
+// FULLSCREEN MENU WITH BACKGROUND IMAGE
+// ============================================
+
 .fullscreenMenu {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.98);
-  backdrop-filter: blur(10px);
   z-index: 19;
   display: flex;
   align-items: center;
@@ -107,6 +129,42 @@
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.4s ease;
+  overflow: hidden;
+
+  // ARXA ŞƏKİL
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../../../public/assets/t4.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: 1;
+    filter: brightness(0.8) blur(10px);
+    animation: zoomIn 0.6s ease-out;
+  }
+
+  // QARALTMA OVERLAY
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.4) 100%
+    );
+    z-index: 2;
+    backdrop-filter: blur(2px);
+  }
 
   &.active {
     opacity: 1;
@@ -117,6 +175,8 @@
     width: 100%;
     max-width: 800px;
     padding: 2rem;
+    position: relative;
+    z-index: 3;
 
     .fullscreenNav {
       .fullscreenNavList {
@@ -124,8 +184,8 @@
         margin: 0;
         padding: 0;
         display: flex;
-        flex-direction: column;
         align-items: center;
+        justify-content: center;
         gap: 2rem;
 
         .fullscreenNavItem {
@@ -142,17 +202,45 @@
             font-weight: 700;
             padding: 1rem 2rem;
             position: relative;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             border-radius: 10px;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.9);
+            letter-spacing: 0.05em;
+
+            &::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: rgba(255, 255, 255, 0.1);
+              border-radius: 10px;
+              opacity: 0;
+              transition: opacity 0.3s ease;
+              z-index: -1;
+            }
 
             &:hover {
-              color: #cccccc;
-              background: rgba(255, 255, 255, 0.05);
-              transform: scale(1.05);
+              color: #ffffff;
+              background: rgba(255, 255, 255, 0.15);
+              text-shadow: 3px 3px 15px rgba(0, 0, 0, 1);
+              box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+
+              &::before {
+                opacity: 1;
+              }
             }
 
             &:active {
-              transform: scale(0.98);
+              transform: scale(0.95) translateY(0);
+            }
+
+            @media (hover: none) {
+              &:active {
+                background: rgba(255, 255, 255, 0.15);
+                transform: scale(1.05);
+              }
             }
           }
         }
@@ -160,7 +248,7 @@
     }
   }
 
-  // Menyu açılanda elementləri göstər
+  // MENYU AÇILANDA ANİMASİYA
   &.active {
     .fullscreenNavItem {
       opacity: 1;
@@ -169,17 +257,25 @@
       &:nth-child(1) {
         transition-delay: 0.1s;
       }
+
       &:nth-child(2) {
         transition-delay: 0.2s;
       }
+
       &:nth-child(3) {
         transition-delay: 0.3s;
       }
+
       &:nth-child(4) {
         transition-delay: 0.4s;
       }
+
       &:nth-child(5) {
         transition-delay: 0.5s;
+      }
+
+      &:nth-child(6) {
+        transition-delay: 0.6s;
       }
     }
   }
@@ -190,10 +286,16 @@
 
       .fullscreenNav .fullscreenNavList {
         gap: 1.5rem;
+        flex-direction: column;
 
         .fullscreenNavItem .fullscreenNavLink {
           font-size: 2.5rem;
           padding: 0.8rem 1.5rem;
+          text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+
+          &:hover {
+            transform: scale(1.06) translateY(-3px);
+          }
         }
       }
     }
@@ -209,6 +311,12 @@
         .fullscreenNavItem .fullscreenNavLink {
           font-size: 2rem;
           padding: 0.7rem 1.2rem;
+          text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+          letter-spacing: 0.02em;
+
+          &:hover {
+            transform: scale(1.05) translateY(-2px);
+          }
         }
       }
     }
@@ -216,30 +324,135 @@
 
   @media (max-width: 360px) {
     .fullscreenMenuContent {
+      padding: 0.8rem;
+
       .fullscreenNav .fullscreenNavList {
         gap: 1rem;
 
         .fullscreenNavItem .fullscreenNavLink {
           font-size: 1.7rem;
           padding: 0.6rem 1rem;
+          text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.9);
+
+          &:hover {
+            transform: scale(1.04) translateY(-1px);
+          }
         }
       }
     }
   }
 }
 
-// Body stilləri
+// ============================================
+// BODY STİLLƏRİ
+// ============================================
+
 body {
   padding-top: 90px;
   background-color: #000000;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+
+  @media (max-width: 768px) {
+    padding-top: 80px;
+  }
 
   @media (max-width: 480px) {
-    padding-top: 85px;
+    padding-top: 75px;
+  }
+}
+
+// ============================================
+// ANİMASİYALAR
+// ============================================
+
+@keyframes zoomIn {
+  from {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+// ============================================
+// SCROLL BAR STİLİ (OPTIONAL)
+// ============================================
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 5px;
+
+  &:hover {
+    background: #555555;
+  }
+}
+
+// ============================================
+// GLOBAl SEÇİMLƏR
+// ============================================
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+// ============================================
+// PRINTING STİLLƏRİ
+// ============================================
+
+@media print {
+  .header,
+  .fullscreenMenu,
+  .mobileMenuToggle {
+    display: none !important;
+  }
+
+  body {
+    padding-top: 0;
   }
 }
